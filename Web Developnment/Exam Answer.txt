@@ -1,0 +1,157 @@
+1
+2: <a href=”http://www.w3schools.com”>W3Schools</a> 
+
+3: <table><tr><td> 
+
+4: <ol> 
+
+5: <select> 
+
+6: What is the attribute "alt" used for?
+
+The "alt" attribute in HTML is used to provide alternative text for an image. This text is displayed if the image cannot be loaded or is not visible to the user, and it also serves as a description of the image for users with disabilities who rely on screen readers. It's essential for accessibility and SEO (search engine optimization).
+
+
+What is the difference between the first img HTML and the second img HTML?
+
+The first and second image elements (img tags) both display an image with the same source ("img_girl.jpg"), alt text ("Girl in a jacket"), and specified dimensions. The main difference lies in how the dimensions are specified:
+
+In the first img HTML, the dimensions are set using the "width" and "height" attributes, i.e., width="500" height="600". These attributes set the width and height of the image.
+In the second img HTML, the dimensions are set using inline CSS styling, i.e., style="width:500px;height:600px;". This is an inline style declaration to set the width and height.
+In terms of functionality and display, both examples will render the image at the same size. The second example uses CSS for styling, providing more flexibility for additional styling.
+
+
+How can you move the img to the right of the text in the third p HTML?
+
+To move the image to the right of the text in the third paragraph (p HTML), you can use CSS to style it. You can use the "float" property to move the image to the right, and you might also want to add some margin to create spacing between the image and the text. Here's an example of how you can achieve this:
+
+<p>
+  <img src="smile.gif" alt="face" style="width:42px;height:42px; float: right; margin-left: 10px;">
+  This is the text mixed with the image.
+</p>
+
+In this code, we've added "float: right;" to move the image to the right of the text and "margin-left: 10px;" to create a 10-pixel gap between the image and the text.
+
+
+
+Write an image link HTML (when you click the image, you jump to a target URL)
+
+To create an image that serves as a link, you can use the "a" (anchor) tag to wrap the "img" tag. Here's an example:
+
+<a href="https://www.example.com">
+  <img src="your_image.jpg" alt="Image Description">
+</a>
+
+In this example, when a user clicks on the image, they will be taken to the URL specified in the "href" attribute of the anchor tag (in this case, "https://www.example.com").
+
+
+7: The usemap attribute of the image tag refers to a map with the name #workmap, but the map's actual name is sample. You should use the correct name in the usemap attribute.
+
+The <map> tag's name attribute should match the name you specified in the usemap attribute. In this case, it should be workmap, not sample.
+
+
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+<map name="workmap">
+    <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+    <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+    <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>
+
+
+default: This is used to define the default clickable area when no other area matches the click. It covers the entire image.
+poly: This is used to define a polygonal area, allowing for more complex shapes. You define the coordinates for the vertices of the polygon.
+
+ 
+8: How to repeat the background image?
+
+To repeat the background image, you can use the background-repeat property and set it to either repeat, repeat-x, or repeat-y, depending on the desired direction of repetition. For example:
+
+repeat: The image will repeat both horizontally and vertically.
+repeat-x: The image will repeat only horizontally.
+repeat-y: The image will repeat only vertically.
+Here's an example of setting the background image to repeat both horizontally and vertically:
+
+body {
+  background-image: url('img_girl.jpg');
+  background-repeat: repeat;
+}
+
+What does "fixed" mean for background-attachment?
+
+Setting background-attachment: fixed; means that the background image remains fixed in the viewport as the user scrolls the page. In other words, the background image stays in a fixed position relative to the viewport, and it doesn't move with the content as the user scrolls. This can create a parallax effect or give the impression that the content is scrolling over the background image.
+
+
+If we set background-size to "100% 100%", what is the difference between "cover" and "100% 100%"?
+
+When you set background-size to "100% 100%", you are telling the browser to scale the background image so that it completely fits within the dimensions of the element to which the background is applied. This means that the image will expand or shrink as necessary to occupy the entire width and height of the element without cropping. If the aspect ratio of the image is different from the element, there may be empty space in either the width or height of the element, depending on the image's aspect ratio.
+
+On the other hand, when you use background-size: cover;, the browser scales the background image to completely cover the element's dimensions while maintaining its aspect ratio. If the aspect ratio of the element and the image do not match, this can result in cropping. Parts of the image may be cut off to ensure that it fully covers the element, and no empty space is visible.
+
+In summary, the key difference is how they handle the aspect ratio and any resulting empty space or cropping:
+
+"100% 100%" ensures that the entire image fits within the element, with no cropping, even if it leads to empty space.
+"cover" ensures that the image covers the entire element, cropping it if necessary to maintain the aspect ratio and fill the space.
+
+
+ 
+9: <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h2>The picture Element</h2>
+
+<picture>
+  <source media="(max-width: 465px)" srcset="img_girl.jpg">
+  <source media="(max-width: 649px)" srcset="img_car.jpg">
+  <img src="img_food.jpg" style="width:100%;">
+</picture> 
+
+</body>
+</html>
+
+When the screen width will be 465 and 649 car image will be shown, when the screen width will be 650 or more girl image wiil appear and when the screen witdh will be less than 600 that the food image will appear.
+
+12: <img src="https://www.w3schools.com/images/picture.jpg" alt="Mountain" style="width:300px">
+
+This is an absolute URL, so the image is not located within local file structure but can be visited the image by using this link in google.
+
+<img src="./images/picture.jpg" alt="Mountain" style="width:300px">
+
+This is a relative path, and it points to an image file located in the same directory as the HTML file, under a subdirectory named "images." So, the "picture.jpg" file is located in the "Projects/HTML/images/" directory.
+<img src="../images/picture.jpg" alt="Mountain" style="width:300px">
+
+This is also a relative path, and it points to an image file located in the parent directory of the directory containing the HTML file. So, the "picture.jpg" file is located in the "Projects/images/" directory.
+<img src="images/picture.jpg" alt="Mountain" style="width:300px">
+
+This is a relative path that points to an image file located in a subdirectory named "images" within the same directory as the HTML file. So, the "picture.jpg" file is located in the "Projects/HTML/images/" directory.
+
+
+
+
+
+13:  The difference between style="width:100%;" and style="max-width:100%;" in the context of responsive images is as follows:
+
+style="width:100%;"
+
+This style attribute sets the width of the image to 100% of its container. It means that the image will always occupy the entire width of its container, and the height will adjust proportionally. This can potentially stretch the image or cause it to be larger than its original dimensions if the container is wider than the image.
+
+style="max-width:100%;height:auto;"
+
+This style attribute sets the maximum width of the image to 100% of its container. The "height:auto;" part maintains the aspect ratio of the image, so it automatically adjusts the height to maintain the correct proportions. This approach ensures that the image doesn't stretch beyond its original dimensions and scales down to fit the container's width while preserving its aspect ratio.
+
+
+
+
+To make text size responsive, we can use CSS media queries to adjust the text size based on the screen size or device. Here's a brief explanation of the steps to make text size responsive:
+
+Define a Default Text Size: Start by setting a default font size for your text. This size should be suitable for larger screens or the standard view of your website.
+
+Use CSS Media Queries: Media queries allow us to apply different CSS rules based on the characteristics of the user's device or screen. You can specify the maximum or minimum screen width at which these rules should apply.
+
+Adjust Text Size with Media Queries: Within our media queries, adjust the font size for specific screen sizes. For example, we might reduce the font size for smaller screens or increase it for larger screens. Use the font-size property to make these adjustments.
+
+

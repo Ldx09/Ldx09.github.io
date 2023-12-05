@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Styling the body */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* Styling the parallax sections */
+        .parallax {
+            width: 100%;
+            height: 600px;
+            background: url('https://museumofaviation.org/wp-content/uploads/2017/05/702_1433440837_albert-einstein.jpg');
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+
+        /* Styling the dark theme */
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+
+        /* Styling the light theme */
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        /* Styling the title */
+        .parallax h2 {
+            margin: auto;
+            position: relative;
+            top: 300px;
+            width: 250px;
+            height: 37px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Styling the content or paragraph */
+        .content {
+            padding: 50px;
+            font-size: 17px;
+        }
+
+        /* Styling the content container */
+        .content-container {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        /* Styling the contact form */
+        .contact-form {
+            text-align: center;
+            padding: 25px;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Introduction -->
+    <div class="parallax dark-theme">
+        <h2>Albert Einstein</h2>
+    </div>
+
+    <!-- Content of the introduction -->
+    <div class="content dark-theme content-container">
+        <p>
+            Albert Einstein (1879-1955) led a life characterized by extraordinary intellectual contributions and a commitment to humanitarian causes. Born in Ulm, Germany, he showed early promise in mathematics and physics. His 1905 paper on the special theory of relativity revolutionized our understanding of space and time, introducing the iconic equation E=mc². In 1915, he developed the general theory of relativity, which explained gravity as the curvature of space-time. Einstein's work laid the foundation for modern physics and led to the bending of light during a solar eclipse, providing empirical evidence for his theory. He was awarded the Nobel Prize in Physics in 1921 for his work on the photoelectric effect. Fleeing Nazi persecution, he immigrated to the United States, where he joined the Institute for Advanced Study in Princeton. Besides his scientific endeavors, Einstein was a passionate advocate for civil rights, pacifism, and disarmament, using his fame to champion these causes. His legacy continues to inspire generations in both science and social justice.
+        </p>
+    </div>
+
+    <!-- Projects -->
+    <div class="parallax light-theme">
+        <h2>Projects</h2>
+    </div>
+
+    <!-- Content of Projects -->
+    <div class="content light-theme content-container">
+        <p>
+            - Special Relativity Theory: Einstein's theory, published in 1905, revolutionized our understanding of space and time. It introduced the idea that the laws of physics are the same for all non-accelerating observers and led to the famous equation E=mc², which relates energy to mass and the speed of light.
+            <br>
+            - General Relativity Theory: Developed in 1915, this theory extended special relativity to include the effects of gravity. It explained gravity as the curvature of space-time caused by mass, leading to predictions like the bending of light by massive objects.
+            <br>
+            - Photoelectric Effect Explanation: Einstein's work on the photoelectric effect (1905) provided evidence for the quantum nature of light, showing that light can behave as discrete particles (photons) in addition to waves.
+            <br>
+            - E=mc² Equation: This equation, derived from special relativity, demonstrates the equivalence of mass and energy, with 'E' representing energy, 'm' representing mass, and 'c' being the speed of light.
+            <br>
+            - Brownian Motion Theory: In 1905, Einstein explained the erratic motion of particles suspended in a fluid (Brownian motion) as the result of random collisions with molecules, providing strong evidence for the existence of atoms and molecules.
+            <br>
+            - Mass-Energy Equivalence: This concept, derived from Einstein's work, highlights that mass can be converted into energy and vice versa, a fundamental principle in nuclear physics.
+            <br>
+            - Unified Field Theory (unfinished): Einstein's pursuit of a unified theory to merge electromagnetism and gravity into a single framework was never completed. This remains an ongoing challenge in theoretical physics.
+        </p>
+    </div>
+
+    <!-- Achievements -->
+    <div class="parallax light-theme">
+        <h2>Achievements</h2>
+    </div>
+
+    <!-- Content of Achievements -->
+    <div class="content light-theme content-container">
+        <p>
+            - Annus Mirabilis Papers (1905)
+            <br>
+            - Nobel Prize in Physics (1921)
+            <br>
+            - Theory of General Relativity (1915)
+            <br>
+            - Einstein-Szilárd Letter (1939)
+            <br>
+            - Humanitarian and Civil Rights Activism
+            <br>
+            - Offered Presidency of Israel (1952)
+        </p>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="parallax dark-theme">
+        <h2>Contact Us</h2>
+    </div>
+
+     <!-- Contact Us Form -->
+    <div class="parallax-1">
+        <h2>Contact Us</h2>
+    </div>
+
+    <div class="para-1">
+        <p>
+            To know more about Albert Einstein or to leave a comment, please fill out the form below:
+        </p>
+        <form action="index.html" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="comment">Comment:</label><br>
+            <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br><br>
+
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+</body>
+</html>

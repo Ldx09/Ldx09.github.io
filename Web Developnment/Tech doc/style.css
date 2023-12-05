@@ -1,0 +1,74 @@
+/* Your existing CSS styles go here */
+
+div.main-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+nav#navbar {
+    position: fixed;
+}
+
+main#main-doc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 250px; /* Adjust the margin to create space for the fixed documentation menu */
+}
+
+.section-image {
+    max-width: 500%;
+    height: auto;
+    width: 300px;
+}
+
+.content-container,
+.image-container {
+    padding: 20px;
+}
+
+nav#navbar a {
+    display: block;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: black;
+}
+
+section.main-section {
+    background-color: #C3FDB8;
+    padding: 20px;
+    display: flex;
+    margin-top: 50px; /* Adjust the margin-top to avoid overlapping with the fixed menu */
+}
+
+.content-container {
+    flex: 1;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.header-wrapper {
+    flex: 1;
+}
+
+header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#ContactUs {
+    background-color: #44EAEC;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+

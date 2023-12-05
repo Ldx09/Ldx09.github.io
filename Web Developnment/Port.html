@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Create a Portfolio Gallery
+		using HTML and CSS
+	</title>
+	
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+		
+	<style>
+		/* wildcard styling */
+		* {
+			box-sizing: border-box;
+		}
+		
+		/* padding for the whole body */
+		body {
+			padding: 15px;
+		}
+		
+		/* styling body */
+		.container {
+			max-width: 1200px;
+			margin: auto;
+		}
+		
+		h1 {
+			color: green;
+		}
+		
+		/* anchor tag decoration */
+		a {
+			text-decoration: none;
+			color: #5673C8;
+		}
+		
+		a:hover {
+			color: lightblue;
+		}
+		
+		/* paragraph tag decoration */
+		p {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 4;
+			overflow: hidden;
+		}
+		
+		/* row and column decoration */
+		.row {
+			margin: 0px -15px;
+			padding: 8px;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		
+		.column {
+			width: 25%;
+			padding: 15px;
+			box-sizing: border-box;
+		}
+		
+		/* content decoration */
+		.content {
+			background-color: white;
+			padding: 10px;
+			border: 1px solid gray;
+		}
+		
+		/* set a specific height for the images */
+		.content img {
+			width: 100%;
+			height: 200px; /* Adjust the height as needed */
+			object-fit: cover; /* Maintain aspect ratio and cover the container */
+		}
+		
+		/* window size 850 width set */
+		@media screen and (max-width: 850px) {
+			.column {
+				width: 50%;
+			}
+		}
+	
+		/* window size 400 width set */
+		@media screen and (max-width: 400px) {
+			.column {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- title and tag -->
+	<div class="container">
+		<h1>Vrajesh Shah's Portfolio</h1>
+		<h3>A Tech Nerd. Geeks</h3>
+		<hr>
+
+		<!-- Content of the body-->
+		<h2>The Commencement</h2>
+		<div class="row">
+			<div class="column">
+				<div class="content">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Portrait_of_Sir_Isaac_Newton%2C_1689_%28brightened%29.jpg" alt="">
+					<h3><a href="#">Sir Isaac Newton</a></h3>
+					<p>
+						"Embark on a journey through the life and legacy of Sir Isaac Newton with my tribute page. Explore the profound contributions of this scientific luminary whose groundbreaking work shaped our understanding of the universe."
+					</p>
+				</div>
+			</div>
+			
+			<div class="column">
+				<div class="content">
+					<img src="https://img.freepik.com/premium-photo/dark-chocolate-bars-isolated-white-background-stack-chocolate-pieces-closeup_88281-1959.jpg?size=626&ext=jpg&ga=GA1.1.2116175301.1700697600&semt=ais" alt="">
+					<h3><a href="#">Chocolate Survey</a></h3>
+					<p>
+						"Indulge in the sweet world of chocolate through my survey project. Uncover the diverse tastes and preferences that make the chocolate experience uniquely delightful."
+					</p>
+				</div>
+			</div>
+			
+			<div class="column">
+				<div class="content">
+					<img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-3091504.jpg" alt="">
+					<h3><a href="#">Parallax Website</a></h3>
+					<p>
+						"Dive into the fascinating universe of Albert Einstein with my parallax website. Experience the brilliance of his life and achievements through captivating scrolling visuals, unraveling the layers of one of history's greatest minds."
+					</p>
+				</div>
+			</div>
+			
+			<div class="column">
+				<div class="content">
+					<img src="https://www.aycmedia.com/images/blog/sm/oGjvc.jpg" alt="">
+					<h3><a href="#">Restaurant Website</a></h3>
+					<p>
+						"Savor the essence of Italy through my web project—an enticing journey into the heart of a virtual Italian restaurant. Immerse yourself in the flavors, ambiance, and culinary artistry that define this delicious digital experience."
+					</p>
+
+
+
+
+				<!-- Second Row -->
+			<div class="column">
+				<div class="content">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/1/14/The_Event_2010_Intertitle.svg" alt="">
+					<h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/Event/Index.html">Event Page</a></h3>
+					<p>
+						"Project 4 description goes here."
+					</p>
+				</div>
+			</div>
+			
+			<div class="column">
+				<div class="content">
+					<img src="your_image_source" alt="">
+					<h3><a href="#">Project 5</a></h3>
+					<p>
+						"Project 5 description goes here."
+					</p>
+				</div>
+			</div>
+			
+			<div class="column">
+				<div class="content">
+					<img src="your_image_source" alt="">
+					<h3><a href="#">Project 6</a></h3>
+					<p>
+						"Project 6 description goes here."
+					</p>
+				</div>
+			</div>
+			
+			<!-- Third Row -->
+			<div class="column">
+				<div class="content">
+					<img src="your_image_source" alt="">
+					<h3><a href="#">Project 7</a></h3>
+					<p>
+						"Project 7 description goes here."
+					</p>
+				</div>
+			</div>
+			
+			<div class="column">
+				<div class="content">
+					<img src="your_image_source" alt="">
+					<h3><a href="#">Project 8</a></h3>
+					<p>
+						"Project 8 description goes here."
+					</p>
+				</div>
+			</div>
+			
+			<div class="column">
+				<div class="content">
+					<img src="your_image_source" alt="">
+					<h3><a href="#">Project 9</a></h3>
+					<p>
+						"Project 9 description goes here."
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

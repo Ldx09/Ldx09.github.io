@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Common styles for both pages */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling the main section */
+        section {
+            width: 100%;
+            min-height: 100vh;
+            background: url('https://static7.depositphotos.com/1297553/795/i/450/depositphotos_7951909-stock-photo-team-of-lifting-it-information.jpg');
+            background-size: cover;
+            display: flex;
+            flex-direction: column; /* Allow content to stack vertically */
+            align-items: center;
+            justify-content: space-between; /* Add space at the bottom for the event booking section */
+            padding: 20px; /* Add padding to the section */
+        }
+
+        /* Styling the main title */
+        h1 {
+            color: #000; /* Change the font color to black */
+            font-size: 36px; /* Increase the font size for the main title */
+        }
+
+        /* Styling for paragraphs and links */
+        p, a {
+            color: #000;
+        }
+
+        /* Styling for individual events */
+        .event {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 182, 193, 0.8); /* Light pink background */
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        /* Styling for event dates */
+        .event h2 {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        /* Styling for event titles */
+        .event h3 {
+            margin: 0;
+        }
+
+        /* Styling for event links */
+        .event h3 a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* Styling the event booking section */
+        .event-booking {
+            background: rgba(255, 182, 193, 0.8); /* Light pink background */
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            margin-top: 20px; /* Add space at the top of the event booking section */
+        }
+
+        .event-booking h2 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .event-booking label {
+            display: block;
+            font-size: 18px;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .event-booking select,
+        .event-booking input[type="text"],
+        .event-booking input[type="button"] {
+            margin: 5px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        /* Transparent squares behind event titles */
+        .event h3::before {
+            content: " ";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 182, 193, 0.8); /* Light pink background */
+            margin-right: 5px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <!-- Main Title -->
+        <h1>Primary IT Care</h1>
+
+        <!-- Event List -->
+        <div class="event-list">
+            <!-- Informative Cybersecurity Event -->
+            <div class="event">
+                <h2>17 <br><span>October</span></h2>
+                <h3><a href="Event_detail1.html">Event 1: Informative Cybersecurity Event</a></h3>
+            </div>
+
+            <!-- Unlock the Secrets of Successful Project Management (Event 2 in light pink) -->
+            <div class="event">
+                <h2>17 <br><span>October</span></h2>
+                <h3><a href="Event_detail2.html">Event 2: Unlock the Secrets of Successful Project Management</a></h3>
+            </div>
+
+            <!-- Join Us for a Web Development Extravaganza -->
+            <div class="event">
+                <h2>17 <br><span>October</span></h2>
+                <h3><a href="Event_detail3.html">Event 3: Join Us for a Web Development Extravaganza</a></h3>
+            </div>
+        </div>
+
+        <!-- Event Booking Section -->
+        <div class="event-booking">
+            <h2>Event Booking</h2>
+            <label for="event-select">Select an Event:</label>
+            <select id="event-select">
+                <option value="Event 1">Informative Cybersecurity Event</option>
+                <option value="Event 2">Unlock the Secrets of Successful Project Management</option>
+                <option value="Event 3">Join Us for a Web Development Extravaganza</option>
+            </select>
+            <br>
+            <label for="email-input">Enter Your Email:</label>
+            <input type="text" id="email-input">
+            <br>
+            <input type="button" value="Book Event">
+        </div>
+    </section>
+</body>
+</html>

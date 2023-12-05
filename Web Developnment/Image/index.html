@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Gallery</title>
+  <style>
+        body {
+            background-image: url('https://lh3.googleusercontent.com/aivaZ-PTMMMPaZiW_c373JiVETJR0eIHtpTs2lQvCJLPepOKBW-1yZNK14T0CLNY7OcD05p2gDGbSq52ffUwU2ZO=w640-h400-e365-rj-sc0x00ffffff');
+            background-size: cover; /* Adjust the image size to cover the entire viewport */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-attachment: fixed; /* Keep the image fixed while scrolling */
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="buy.html">Buy</a></li>
+    </ul>
+</div>
+
+<div class="heading">
+    <h1>Planet Hub</h1>
+</div>
+
+<div class="gallery">
+    <div class="row">
+        <div class="image-container" onclick="showImage(this, 'Sun', 'The Sun is the brilliant, fiery star at the center of our solar system, providing the life-giving energy that sustains all life on Earth. A massive, seething ball of hot, glowing gas, the Sun\'s core fuses hydrogen atoms to create helium, releasing a tremendous amount of light and heat in the process. Its immense gravitational pull keeps the planets of the solar system in orbit, and its radiant energy powers everything from photosynthesis in plants to the generation of electricity through solar panels. The Sun is a celestial powerhouse, a symbol of life, warmth, and the marvels of the universe.')">
+            <img src="https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D" alt="Sun">
+        </div>
+        <div class="image-container" onclick="showImage(this, 'MERCURY', 'Mercury, the closest planet to the Sun, is a harsh, sun-scorched world. Its surface is a desolate expanse of heavily cratered terrain, and its extreme temperature variations are extreme, swinging from scorching daytime highs to frigid nighttime lows. With virtually no atmosphere to speak of, it offers no protection from the Sun\'s intense radiation, making it a challenging environment for exploration. Despite its barren appearance, the planet has captured the interest of scientists and space agencies due to its unique characteristics and potential insights into the early solar system.')">
+                <img src="https://photojournal.jpl.nasa.gov/jpeg/PIA16853.jpg" alt="Mercury">
+            </div>
+            <div class="image-container" onclick="showImage(this, 'VENUS', 'Venus, often referred to as Earth\'s "evil twin," is a hostile, enigmatic planet. Its thick, toxic atmosphere is primarily composed of carbon dioxide, which creates a runaway greenhouse effect, resulting in scorching surface temperatures that can melt lead. The planet\'s surface is obscured by a perpetual shroud of sulfuric acid clouds, making it a challenging subject for exploration. Venus\' extreme conditions, including crushing atmospheric pressure and searing heat, have deterred human missions, but robotic probes have revealed a unique world with intriguing geological features, like vast volcanic plains and highland regions, providing valuable insights into Earth\'s own evolution.')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/PIA23791-Venus-NewlyProcessedView-20200608.jpg/480px-PIA23791-Venus-NewlyProcessedView-20200608.jpg" alt="Venus">
+            </div>
+        </div>
+        <div class="row">
+<div class="image-container" onclick="showImage(this, 'EARTH', 'Earth, the third planet from the Sun, is our unique and precious home. It\'s the only known celestial body to support a rich tapestry of life, featuring diverse ecosystems, abundant water, and a stable climate. With its stunning landscapes, from lush forests to arid deserts and towering mountain ranges, Earth is a planet of breathtaking beauty. It sustains a wide array of species, including humans, who have left a profound mark on its surface. Earth\'s intricate interplay of geology, climate, and biology has created the perfect conditions for life, making it a remarkable oasis in the cosmos.')">
+                <img src="https://media.istockphoto.com/id/172202755/photo/usa-view.jpg?s=612x612&w=0&k=20&c=qqoAi64_1yqL692Rc9QX2eNEdIUhtDHVWe02oehfR3g=" alt="Earth">
+            </div>
+            <div class="image-container" onclick="showImage(this, 'MARS', 'Mars, often dubbed the "Red Planet," is a captivating world characterized by its barren, rusty landscape. This fourth planet from the Sun features dramatic canyons, towering volcanoes, and a thin atmosphere composed mostly of carbon dioxide. Mars has long fascinated scientists due to the evidence of ancient water flows etched into its surface, suggesting the potential for past life. It is also a prime target for future exploration and potential colonization, with missions ongoing to unravel its mysteries and pave the way for human presence beyond Earth.')">
+                <img src="https://media.istockphoto.com/id/647269852/photo/planet-mars.jpg?s=612x612&w=0&k=20&c=QG3rqHjFoO59LY_MNSyE2CxCPfgtUUKEdNpgebZtgRI=" alt="Mars">
+            </div>
+            <div class="image-container" onclick="showImage(this, 'JUPITER', 'Jupiter, the largest planet in our solar system, is a colossal gas giant with an enthralling and tumultuous atmosphere. Its most famous feature, the Great Red Spot, is a massive, long-lived storm, and Jupiter is adorned with intricate cloud bands of various colors. Composed primarily of hydrogen and helium, it has no solid surface and a powerful magnetic field. Jupiter\'s immense size and gravity influence the dynamics of the entire solar system, making it a vital celestial body to study. This majestic planet, with its awe-inspiring storms and swirling clouds, offers a glimpse into the vast and dynamic nature of the cosmos.')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Jupiter">
+            </div>
+ </div>
+        <div class="row">
+<div class="image-container" onclick="showImage(this, 'Saturn', 'Saturn, the sixth planet from the Sun, is a celestial wonder known for its stunning and iconic ring system. This gas giant is a behemoth, primarily composed of hydrogen and helium, with a complex array of beautiful ring structures, formed by countless icy particles. Saturn\'s atmosphere exhibits mesmerizing cloud bands and a distinct hexagonal storm at its north pole. Its enigmatic moon, Titan, features a thick atmosphere and possible liquid lakes, making it an intriguing target for exploration. Saturn\'s sheer beauty and scientific importance make it a captivating and enigmatic member of our solar system.')">
+                <img src="https://media.istockphoto.com/id/480019224/photo/saturn.jpg?s=612x612&w=0&k=20&c=v87XpxkyKNXGJVcQ_m3wWYihAUGNK1bvadEWkhccGdk=" alt="Saturn">
+            </div>
+            <div class="image-container" onclick="showImage(this, 'Uranus', 'Uranus, the seventh planet from the Sun, is a unique ice giant in our solar system. It stands out for its distinct feature – a nearly horizontal axis of rotation, causing it to appear to roll along its orbital path. This icy world is enveloped by a frigid atmosphere primarily composed of hydrogen, helium, and methane. Its bluish-green hue is due to the presence of methane in the upper atmosphere, which scatters sunlight. Uranus remains a mysterious and less explored planet, with its peculiar characteristics and intriguing potential for deeper study in understanding the dynamics of our solar system.')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Uranus_-_Voyager_2.jpg" alt="Uranus">
+            </div>
+            <div class="image-container" onclick="showImage(this, 'Neptune', 'Neptune, the eighth and farthest planet from the Sun, is a distant, frigid, and vibrant blue world. As an ice giant, it\'s enveloped in a thick atmosphere primarily composed of hydrogen, helium, and methane, giving it its distinct color. Neptune is home to some of the most extreme weather in the solar system, with powerful storms and incredibly fast winds. Its largest moon, Triton, features geysers that spew nitrogen into space. Neptune\'s remote location and dynamic nature make it a fascinating subject of study, offering insights into the outer reaches of our cosmic neighborhood.')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/240px-Neptune_Full.jpg" alt="Neptune">
+            </div>
+            <div class="image-container" onclick="showImage(this, 'Pluto', 'Pluto, once considered the ninth planet in our solar system, is now classified as a dwarf planet. It resides in the Kuiper Belt, a distant region beyond Neptune. Pluto is a small, icy world with a highly elliptical orbit, taking it far from the Sun and then back closer. Its surface is covered in nitrogen ice, and it has a thin atmosphere of nitrogen, methane, and carbon monoxide. The 2006 reclassification sparked debates, but Pluto continues to captivate astronomers as they explore the mysteries of the distant reaches of our solar system and the Kuiper Belt objects that share its remote neighborhood.')">
+                <img src="https://i.imgur.com/B2WUkZk.jpg" alt="Pluto">
+            </div>
+    </div>
+</div>
+
+<div class="image-popup-container" id="imagePopup">
+    <span class="close-button" onclick="closeImage()">×</span>
+    <img src="" alt="Popup Image" id="popupImage">
+    <div id="imageInfo">
+        <h2 id="imageTitle"></h2>
+        <p id="imageDescription"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

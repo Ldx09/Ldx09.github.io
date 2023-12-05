@@ -1,0 +1,131 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@200;300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Yaldevi', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Styling the Top Bar */
+.top-bar {
+    background: #0e85e0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.top-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.top-bar li {
+    margin-right: 20px;
+}
+
+.top-bar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Styling the Heading of Image Gallery */
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background: #121FCF;
+    background: linear-gradient(to right, #0e85e0 0%, #26ff1a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Styling gallery section */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align items: center;
+    gap: 20px;
+}
+
+/* Styling rows of images */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Styling individual image */
+.row img {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* onHover image will expand a little bit */
+.row img:hover {
+    transform: scale(1.1);
+    cursor: zoom-in;
+}
+
+/* This section will be seen when we click on an image */
+.image-popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Close button */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 60px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: red;
+}
+
+/* Popup image styling */
+#popupImage {
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Image information styling */
+#imageInfo {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* Making images more responsive for smaller-sized devices */
+@media (max-width: 670px) {
+    .row img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .heading {
+        font-size: 20px;
+    }
+}

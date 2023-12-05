@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Survey</title>
+
+    <style>
+       
+        body {
+            background-image: url('chocolate.jpeg'); 
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+       
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+       
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+      
+        button {
+            background-color: #ffa500; 
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chocolate Survey</h1>
+
+    <!-- Create Form - Page 1 -->
+    <form id="form-page-1">
+        <!-- Details -->
+        <div class="form-control">
+            <label for="name">
+                Name
+            </label>
+            <!-- Input Type Text -->
+            <input type="text" id="name" placeholder="Enter your name" />
+        </div>
+
+        <div class="form-control">
+            <label for="email">
+                Email
+            </label>
+            <!-- Input Type Email-->
+            <input type="email" id="email" placeholder="Enter your email" />
+        </div>
+
+        <!-- Multi-line Text Input Control -->
+        <button onclick="showPage(2);" type="button">Next</button>
+    </form>
+
+    <!-- Create Form - Page 2 (Hidden by default) -->
+    <form id="form-page-2" style="display: none;">
+        <div class="form-control">
+            <label>
+                What's your favorite chocolate type?
+            </label>
+            <!-- Input Type Radio Button -->
+            <label for="chocolate-type-1">
+                <input type="radio" id="chocolate-type-1" name="chocolate-type" value="Dark"> Dark Chocolate</label>
+            <label for="chocolate-type-2">
+                <input type="radio" id="chocolate-type-2" name="chocolate-type" value="Milk"> Milk Chocolate</label>
+            <label for="chocolate-type-3">
+                <input type="radio" id="chocolate-type-3" name="chocolate-type" value="White"> White Chocolate</label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                What is your favorite chocolate brand?
+            </label>
+            <input type="text" id="chocolate-brand" placeholder="Enter your favorite chocolate brand" />
+        </div>
+
+        <div class="form-control">
+            <label>
+                How many times you buy chocolates?
+            </label>
+            <select name="buy-frequency" id="buy-frequency">
+                <option value="every-day">Once every day</option>
+                <option value="2-3-times-a-week">2-3 times a week</option>
+                <option value="once-a-week">Once a week</option>
+                <option value="special-occasions">On special occasions only</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label>
+                What is your least favorite chocolate filling?
+            </label>
+            <select name="least-favorite-filling" id="least-favorite-filling">
+                <option value="blueberries">Blueberries</option>
+                <option value="cashews">Cashews</option>
+                <option value="champagne-ganache">Champagne Ganache</option>
+                <option value="crisped-rice">Crisped Rice</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label>
+                What is your favorite flavor of chocolate filling?
+            </label>
+            <select name="favorite-filling" id="favorite-filling">
+                <option value="bacon">Bacon</option>
+                <option value="blueberries">Blueberries</option>
+                <option value="cashews">Cashews</option>
+                <option value="champagne-ganache">Champagne Ganache</option>
+                <option value="crisped-rice">Crisped Rice</option>
+                <option value="hazelnut">Hazelnut</option>
+                <option value="almond">Almond</option>
+                <option value="orange-peel">Orange Peel</option>
+                <option value="peanut-butter">Peanut Butter</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="other-filling">
+                Other (please specify below)
+            </label>
+            <input type="text" id="other-filling" placeholder="Specify other filling" />
+        </div>
+
+        <div class="form-control">
+            <label for="comments">
+                Any additional comments or suggestions about chocolates?
+            </label>
+            <!-- multi-line text input control -->
+            <textarea name="comments" id="comments" placeholder="Enter your comments here"></textarea>
+        </div>
+
+        <!-- Multi-line Text Input Control -->
+        <button onclick="showPage(1);" type="button">Previous</button>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function showPage(pageNumber) {
+            if (pageNumber === 1) {
+                document.getElementById("form-page-1").style.display = "block";
+                document.getElementById("form-page-2").style.display = "none";
+            } else if (pageNumber === 2) {
+                document.getElementById("form-page-1").style.display = "none";
+                document.getElementById("form-page-2").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

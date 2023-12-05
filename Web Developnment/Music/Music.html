@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Your existing CSS styles here */
+        
+        body {
+            background: url('https://png.pngtree.com/thumb_back/fh260/background/20190220/ourmid/pngtree-guitar-musical-note-training-streamline-image_8191.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.7);
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .left-col {
+            text-align: center;
+        }
+
+        .right-col {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        ul.nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            text-align: center;
+        }
+
+        ul.nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        ul.nav li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        /* Styling for the music list */
+        .music-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px;
+        }
+
+        /* Styling for each music item */
+        .music-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+        }
+
+        /* Styling for the play and pause buttons */
+        .music-control {
+            cursor: pointer;
+        }
+
+        /* Specific styling for "Call Me Maybe" music item */
+        .music-item.call-me {
+            justify-content: flex-start;
+        }
+   
+    </style>
+</head>
+<body>
+<div class="navbar">
+        <ul class="nav">
+            <li><a href="Music index.html">HOME</a></li>
+            <li><a href="Contact music.html">CONTACT</a></li>
+            <li><a href="Music.html">MUSIC</a></li>
+            <li><a href="About music.html">ABOUT</a></li>
+            <li><a href="Artist.html">ARTIST</a></li>
+        </ul>
+    </div>   <div class="content">
+        <div class="left-col">
+            <h1>Top 10 Music to Listen</h1>
+        </div>
+
+        <div class="right-col">
+            <ul class="music-list">
+                <li class="music-item">
+                    <span>I Will Always Love You</span>
+                    <span class="music-control" onclick="playPause('music1')">▶️</span>
+                    <audio id="music1">
+                        <source src="music/IWillAlwaysLoveYou.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+
+                <li class="music-item">
+                    <span>Shape of You</span>
+                    <span class="music-control" onclick="playPause('music2')">▶️</span>
+                    <audio id="music2">
+                        <source src="music/ShapeOfYou.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+
+                <li class="music-item">
+                    <span>Call Me Maybe</span>
+                    <span class="music-control" onclick="playPause('music3')">▶️</span>
+                    <audio id="music3">
+                        <source src="music/CallMeMaybe.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+
+                <li class="music-item">
+                    <span>Uptown Funk</span>
+                    <span class="music-control" onclick="playPause('music4')">▶️</span>
+                    <audio id="music4">
+                        <source src="music/UptownFunk.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+
+                <!-- Add the remaining music items here -->
+                <li class="music-item">
+                    <span>Despacito</span>
+                    <span class="music-control" onclick="playPause('music5')">▶️</span>
+                    <audio id="music5">
+                        <source src="music/Despacito.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+
+                <li class="music-item">
+                    <span>All of Me</span>
+                    <span class="music-control" onclick="playPause('music6')">▶️</span>
+                    <audio id="music6">
+                        <source src="music/AllOfMe.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+
+                <li class="music-item">
+                    <span>I Gotta Feeling</span>
+                    <span class="music-control" onclick="playPause('music7')">▶️</span>
+                    <audio id="music7">
+                        <source src="music/IGottaFeeling.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+
+                <li class="music-item">
+                    <span>Just the Way You Are</span>
+                    <span class="music-control" onclick="playPause('music8')">▶️</span>
+                    <audio id="music8">
+                        <source src="music/JustTheWayYouAre.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+
+                <li class="music-item">
+                    <span>Wake Me Up</span>
+                    <span class="music-control" onclick="playPause('music9')">▶️</span>
+                    <audio id="music9">
+                        <source src="music/WakeMeUp.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+
+                <li class="music-item">
+                    <span>I’m a Believer</span>
+                    <span class="music-control" onclick="playPause('music10')">▶️</span>
+                    <audio id="music10">
+                        <source src="music/ImABeliever.mp3" type="audio/mp3">
+                    </audio>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function playPause(audioId) {
+            let audio = document.getElementById(audioId);
+            let playButton = document.querySelector(`#${audioId} + .music-control`);
+            if (audio.paused) {
+                audio.play();
+                playButton.textContent = "▶️";
+            } else {
+                audio.pause();
+                playButton.textContent = "⏸️";
+            }
+        }
+    </script>
+</body>
+</html>

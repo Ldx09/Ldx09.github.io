@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Buy Images</title>
+    <style>
+        /* Add CSS styles for Bid and Current Bid tabs */
+        .bid-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .current-bid {
+            background-color: #FFA500; /* Orange background color for Current Bid */
+            color: white;
+            padding: 5px 10px;
+            margin-top: 5px;
+        }
+
+        /* Add CSS styles for images and their containers */
+        .image-container {
+            text-align: center;
+            display: inline-block;
+            width: 30%; /* Adjust image width as needed */
+            margin: 1%; /* Add some space between images */
+        }
+        .image-container img {
+            width: 100%; /* Make images responsive within containers */
+        }
+
+        /* Style for the menu */
+        .top-bar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .top-bar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .top-bar li {
+            display: inline;
+            padding: 10px;
+        }
+
+        .top-bar a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Add background image */
+        body {
+            background-image: url('https://www.worldofwallpaper.com/media/Space_cover.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div class="top-bar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="buy.html">Buy</a></li>
+        </ul>
+    </div>
+
+    <h1>Solar System HUB</h1>
+
+    <!-- First Row -->
+    <div class="image-container">
+        <img src="https://media.istockphoto.com/id/464902060/vector/solar-system-planets-diagram.jpg?s=1024x1024&w=is&k=20&c=T6cFuwOCWaMx0x8597uuRdUxllQ9S8gj8kM_yY6TNKo=" alt="Image 1">
+        <button class="bid-button">Bid</button>
+        <div class="current-bid">Current Bid: $25,000</div>
+    </div>
+    <div class="image-container">
+        <img src="https://img.freepik.com/free-vector/solar-system-science-education_1308-89626.jpg?w=2000" alt="Image 2">
+        <button class="bid-button">Bid</button>
+        <div class="current-bid">Current Bid: $100,000</div>
+    </div>
+    <div class="image-container">
+        <img src="https://media.istockphoto.com/id/1295851454/photo/earth-and-solar-system-planets.jpg?s=612x612&w=0&k=20&c=OKx3C55qBrlC7LISNSnUngKyaNrzLOOE2btTcITVaLs=" alt="Image 3">
+        <button class "bid-button">Bid</button>
+        <div class="current-bid">Current Bid: $125,000</div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="image-container">
+        <img src="https://m.media-amazon.com/images/I/71u62eKZy4L._AC_UF894,1000_QL80_.jpg" alt="Image 4">
+        <button class="bid-button">Bid</button>
+        <div class="current-bid">Current Bid: $35,000</div>
+    </div>
+    <div class="image-container">
+        <img src="https://media.nature.com/lw767/magazine-assets/d41586-023-02922-w/d41586-023-02922-w_26059092.jpg" alt="Image 5">
+        <button class="bid-button">Bid</button>
+        <div class="current-bid">Current Bid: $500,000</div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Query" rows="4" required></textarea>
+            <button class="contact-button">Send</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
