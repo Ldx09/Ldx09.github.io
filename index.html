@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Create a Portfolio Gallery using HTML and CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* wildcard styling */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* padding for the whole body */
+        body {
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* styling body */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        /* anchor tag decoration */
+        a {
+            text-decoration: none;
+            color: #5673C8;
+        }
+
+        a:hover {
+            color: lightblue;
+        }
+
+        /* paragraph tag decoration */
+        p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+
+        /* row and column decoration */
+        .row {
+            margin: 0px -15px;
+            padding: 8px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            width: 25%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .column img {
+            width: 100%;
+            height: 200px; /* Adjust the height as needed */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+        }
+
+        /* content decoration */
+        .content {
+            background-color: white;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        /* set a specific height for the images */
+        .content img {
+            width: 100%;
+            height: 100%; /* Set the height to 100% to match the total text height */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+        }
+
+        /* window size 850 width set */
+        @media screen and (max-width: 850px) {
+            .column {
+                width: 50%;
+            }
+        }
+
+        /* window size 400 width set */
+        @media screen and (max-width: 400px) {
+            .column {
+                width: 100%;
+            }
+        }
+
+        /* double red colored underline */
+        .underline {
+            width: 100%;
+            border-bottom: 4px double blue;
+            margin-bottom: 15px;
+        }
+
+        /* About section styling */
+        #about {
+            text-align: left;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-wrap: wrap; /* Enable wrapping to handle smaller screens */
+        }
+
+        #about .text {
+            width: 50%; /* Take 50% width for text */
+        }
+
+  #about img {
+    width: 40%; /* Take 50% width for the image */
+    height: 400px; /* Set a fixed height for the image */
+    margin-top: 20px; /* Add margin to separate the image from the text */
+}
+
+/* Achievements section styling */
+#achievements {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#achievements h2 {
+    width: 100%;
+    color: black;
+}
+
+/* Achievements column styling */
+#achievements .column {
+    width: 25%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#achievements .content {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+#achievements img {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Achievements title and description styling */
+#achievements h3, #achievements p {
+    margin: 10px 0;
+}
+
+/* Responsive styling for achievements section */
+@media screen and (max-width: 850px) {
+    #achievements .column {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #achievements .column {
+        width: 100%;
+    }
+}
+
+
+
+/* Add new styles for the Skills section */
+#skills {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#skills .skill {
+    width: 25%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#skills h2 {
+    width: 100%;
+    color: black;
+}
+
+#skills .stars {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#skills .star {
+    color: gold;
+    margin: 0 2px;
+}
+
+
+  #contact {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #contact h2 {
+            width: 100%;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        #contact .form-column {
+            width: calc(50% - 20px);
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #contact form {
+            display: grid;
+            gap: 10px;
+            text-align: left;
+        }
+
+        #contact label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #contact input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        #contact input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+#contact .resume-column {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+#contact .resume-column:hover {
+    background-color: #333;
+}
+
+#contact .resume-column p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* Navigation Bar styling */
+#navigation {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: beige;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#navigation h2 {
+    width: 100%;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #5673C8;
+    margin: 0 15px;
+}
+
+.nav-links a:hover {
+    color: lightblue;
+}
+
+
+
+/* Navigation Bar styling */
+        #top-navigation {
+            background-color: black;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        #top-navigation a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #top-navigation a:hover {
+            color: blue;
+        }
+#go-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #5673C8;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+#go-to-top a {
+    text-decoration: none;
+    color: white;
+}
+
+#go-to-top:hover {
+    background-color: lightblue;
+}
+
+.container h3 {
+    text-decoration: underline;
+}
+
+
+    </style>
+</head>
+
+<body style="background-color: #ffe7c7;">
+
+
+
+    <!-- Top Navigation Bar -->
+    <div id="top-navigation">
+        <a href="#about">About Me</a>
+        <a href="#commencement">Commencement</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact Me</a>
+
+        <!-- Add more links as needed -->
+    </div>
+
+    </style>
+</head>
+
+<body>
+    <!-- title and tag -->
+    <div class="container">
+        <h1>Vrajesh Shah's Portfolio</h1>
+        <h3>"Code Enthusiast Shaping Digital Stories, Crafting Engaging Content."</h3>
+        <hr>
+
+        <!-- About section -->
+        <div id="about">
+            <div class="text">
+                <h2>About Me</h2>
+                <p>
+                    Greetings, I'm Vrajesh Shah, currently in my sophomore year at Mercer County Community College, pursuing a degree in Computer Science. My academic journey has exposed me to a diverse range of programming languages, with proficiency in Java, Python, and HTML. Beyond the classroom, I wear another hat as the Social Media Manager at Primary IT Care, an IT firm. In this role, I orchestrate the company's online presence by managing and engaging with various social media platforms.
+                </p>
+
+                <p>
+                    My responsibilities include curating content, building connections with a wide array of individuals, and ensuring our online image aligns with our brand identity. Additionally, I have a solid foundation in content writing, enabling me to craft engaging and informative posts.
+                </p>
+
+                <p>
+                    This website represents one of my web development projects, which I constructed using HTML as the primary tool. It serves as a showcase for a collection of project ideas that I've worked on during my time in this class. Whether you're seeking inspiration or just curious about my work, you'll find a wealth of project ideas right here.
+                </p>
+
+                <p>
+                    Thank you for taking the time to read this introduction, and I'm excited to share more about my experiences and projects with you.
+                </p>
+                <p>-Vrajesh Shah</p>
+            </div>
+
+            <img src="Image.jpeg" alt="Vrajesh Shah" />
+        </div>
+
+<div class="underline"></div> <!-- Double red colored underline after the second row -->
+
+        <!-- Content of the body-->
+               <h2 id="commencement">The Projects</h2>
+
+<!-- First Row -->
+<div class="row">
+    <div class="column">
+        <div class="content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Portrait_of_Sir_Isaac_Newton%2C_1689_%28brightened%29.jpg" alt="" style="height: 200px;">
+            <h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/html%20assing%202/Sir_Newton.html">Sir Isaac Newton</a></h3>
+            <p>
+                "Embark on a journey through the life and legacy of Sir Isaac Newton with my tribute page. Explore the profound contributions of this scientific luminary whose groundbreaking work shaped our understanding of the universe."
+            </p>
+        </div>
+    </div>
+
+            <div class="column">
+                <div class="content">
+                    <img src="https://img.freepik.com/premium-photo/dark-chocolate-bars-isolated-white-background-stack-chocolate-pieces-closeup_88281-1959.jpg?size=626&ext=jpg&ga=GA1.1.2116175301.1700697600&semt=ais" alt=""  style="height: 200px;">
+                    <h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/HTML%20Survey/Geek%20Survey.html">Chocolate Survey</a></h3>
+                    <p>
+                        "Indulge in the sweet world of chocolate through my survey project. Uncover the diverse tastes and preferences that make the chocolate experience uniquely delightful."
+                    </p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-3091504.jpg" alt=""  style="height: 200px;">
+                    <h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/Albert.html">Parallax Website</a></h3>
+                    <p>
+                        "Dive into the fascinating universe of Albert Einstein with my parallax website. Experience the brilliance of his life and achievements through captivating scrolling visuals, unraveling the layers of one of history's greatest minds."
+                    </p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <img src="https://www.aycmedia.com/images/blog/sm/oGjvc.jpg" alt=""  style="height: 200px;">
+                    <h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/Restroo/order.html">Restaurant Website</a></h3>
+                    <p>
+                        "Savor the essence of Italy through my web project—an enticing journey into the heart of a virtual Italian restaurant. Immerse yourself in the flavors, ambiance, and culinary artistry that define this delicious digital experience."
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="underline"></div> <!-- Double red colored underline after the first row -->
+
+        <!-- Second Row -->
+        <div class="row">
+            <div class="column">
+                <div class="content">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/The_Event_2010_Intertitle.svg" alt=""  style="height: 200px;">
+                    <h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/Event/Index.html">Event Page</a></h3>
+                    <p>
+                        "Step into the dynamic world of technology with my IT Event Website. Explore the latest trends, insightful sessions, and networking opportunities, as we bridge innovation and collaboration in this immersive digital space."
+                    </p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/8718/brain-music-health-memory.jpg" alt=""  style="height: 200px;">
+                    <h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/Music/Music%20index.html">Music Website</a></h3>
+                    <p>
+                        "Dive into the rhythm of my Music Website, a harmonious digital space where melodies come alive. Experience the soulful journey of diverse genres, artist spotlights, and a symphony of interactive features."
+
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <img src="https://meetstheeyestudios.com/wp-content/uploads/2017/05/outdoor-photography.png" alt=""  style="height: 200px;">
+                    <h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/Image/index.html">Image Gallery</a></h3>
+                    <p>
+                        "Embark on a visual odyssey with my Image Gallery Website, a curated collection capturing moments in pixels. Immerse yourself in the artistry and storytelling woven through each image, turning pixels into a visual narrative."
+
+
+                    </p>
+                </div>
+            </div>
+
+            
+            <div class="column">
+                <div class="content">
+                    <img src="https://i0.wp.com/showitbetter.co/wp-content/uploads/2022/09/cover-architecture-templates-1.jpg?fit=750%2C750&ssl=1" alt=""  style="height: 345px;">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="underline"></div> <!-- Double red colored underline after the second row -->
+
+        <!-- Third Row -->
+        <div class="row">
+            <div class="column">
+                <div class="content">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/001/346/638/small/portfolio-with-empty-cover-and-blue-spine-free-vector.jpg" alt=""  style="height: 200px;">
+                    <h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/portfolio.html">Simple Portfolio</a></h3>
+                    <p>
+                        "Welcome to my digital canvas—a Simple Portfolio Website reflecting my journey, skills, and passion. Navigate through a minimalist design that speaks volumes about my work, aspirations, and the creative footprint I aim to leave behind."
+                    </p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <img src="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/4752/direct/1634751194466-Technical%20Documentation%20Software.jpg" alt=""  style="height: 200px;">
+                    <h3><a href="file:///C:/Users/Vrajesh/Downloads/Web%20Developnment/Tech%20doc/tech.html">Technical Documentation</a></h3>
+                    <p>
+                        "Explore the depths of technology seamlessly with my Technical Documentation Website. Simplifying complexity, it serves as a comprehensive guide, unlocking the intricacies of various tools and technologies to empower your journey in the digital realm."
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <img src="https://portfoliobreck.com/cdn/shop/files/PortfolioGallery_LogoCOLOR_Small_2_5f391b15-d652-4c23-a1fc-9d92e4e0c73d.jpg?v=1625523820" alt=""  style="height: 200px;">
+                    <h3><a href="file:///C:/Users/Vrajesh/Downloads/V/Vraj.html">Portfolio Gallery</a></h3>
+                    <p>
+                        "Step into the visual narrative of my journey with the Portfolio Gallery Website. A curated collection of my work unfolds in this digital gallery, offering a glimpse into the creative tapestry that defines my skills and passion."
+
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="content">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5c7ffaa27d0c91723cfe05d7/1557935296381-BZL3NKBYWVID7JQ3O0WG/More-Coming-Soon.jpg?format=1000w" alt=""  style="height: 345px;">
+                     </div>
+            </div>
+        </div>
+        <div class="underline"></div> <!-- Double red colored underline after the third row -->
+    </div>
+
+<!-- Fourth Section: Achievements -->
+<!-- Achievements section -->
+<div id="achievements">
+    <h2>Achievements</h2>
+
+    <!-- Achievements content -->
+    <div class="row">
+        <div class="column">
+            <div class="content">
+                <img src="https://www.uscybersecurity.net/wp-content/uploads/2018/06/Conference-pic.jpg" alt="Achievement 1">
+                <h3>IT Cyber Security Conference</h3>
+                <p>Date:April, 2023.</p>
+<p> Attended and actively participated in the IT Cyber Security Conference, engaging with industry experts and staying abreast of the latest trends and developments in cybersecurity. Contributed insights and gained valuable knowledge to enhance skills in the rapidly evolving field. </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="https://img.freepik.com/premium-photo/digital-marketing-strategies-analyzing-data-managing-social-media-platforms-ai-generated_547674-1125.jpg"Achievement 2">
+                <h3>Social Media Marketing Manager at PITC</h3>
+                <p>Date: July, 2021 - Present</p>
+<p> Led the social media marketing strategy as the Manager at PITC, overseeing campaigns, content creation, and community engagement. Achieved measurable growth in online presence and brand awareness through targeted and effective digital marketing initiatives</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="https://rocketcontent.ai/wp-content/uploads/2022/06/1-1.jpg" alt="Achievement 3">
+                <h3>Content Writer</h3>
+                <p>October, 2022 - Present</p>
+<p>"As a seasoned content creator, I have written compelling content for diverse platforms, including websites, apps, and social media. I've demonstrated proficiency by consistently delivering engaging and informative pieces that resonate with the target audience. My work showcases strong writing skills and a deep understanding of effective communication strategies, contributing to a successful online presence for the projects I've been involved in."</p>
+            </div>
+        </div>
+
+        <div class="column">
+    <div class="content">
+        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEwL2thdGV2NjQ0N18zZF9pbGx1c3RyYXRpb25fb2ZfdHJvcGh5X2NhcnRvb25fYW5pbWF0aW9uX3N0eWxlX2NsZV84NmEwNzM3NC0wNTIxLTQzNzktOGEzOC00ZDc2Njg5ZWJkNmVfMS5qcGc.jpg" alt="Achievement 4" style="width: 80%; max-width: 400px;">
+    
+
+               
+            </div>
+        </div>
+    </div>
+</div>
+<div class="underline"></div> <!-- Double red colored underline after the achievements section -->
+
+<!-- New Skills section -->
+<div id="skills">
+    <h2>Skills</h2>
+
+    <div class="skill" data-rating="4">
+        <h3>HTML</h3>
+        <div class="stars"></div>
+    </div>
+
+    <div class="skill" data-rating="4">
+        <h3>CSS</h3>
+        <div class="stars"></div>
+    </div>
+
+    <div class="skill" data-rating="3">
+        <h3>Java</h3>
+        <div class="stars"></div>
+    </div>
+
+<div class="skill" data-rating="4">
+        <h3>Digital Marketing</h3>
+        <div class="stars"></div>
+    </div>
+
+
+<div class="skill" data-rating="3">
+        <h3>Content Writing</h3>
+        <div class="stars"></div>
+    </div>
+
+
+<div class="skill" data-rating="3">
+        <h3>Communications</h3>
+        <div class="stars"></div>
+    </div>
+
+<div class="skill" data-rating="4">
+        <h3>Risk Taking</h3>
+        <div class="stars"></div>
+    </div>
+
+
+<div class="skill" data-rating="1">
+        <h3>Python</h3>
+        <div class="stars"></div>
+    </div>
+
+
+
+</div>
+<div class="underline"></div> <!-- Double red colored underline after the skills section -->
+
+<!-- Updated script to dynamically generate stars -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select all elements with the class 'stars'
+        const starContainers = document.querySelectorAll('.stars');
+
+        // Iterate over each star container
+        starContainers.forEach(starContainer => {
+            // Get the rating from the parent skill's data-rating attribute
+            const rating = parseInt(starContainer.parentElement.getAttribute('data-rating'));
+
+            // Generate stars based on the rating
+            for (let i = 1; i <= 5; i++) {
+                const star = document.createElement('span');
+                star.className = 'star';
+                star.innerHTML = i <= rating ? '★' : '☆'; // Use ★ for filled star, ☆ for empty star
+                starContainer.appendChild(star);
+            }
+        });
+    });
+</script>
+
+  <!-- Fifth Section: Contact Me -->
+    <div id="contact">
+        <h2>Contact Me</h2>
+
+        <!-- Contact Form -->
+        <div class="form-column">
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name">
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email">
+
+                <label for="query">Query:</label>
+                <textarea id="query" name="query" placeholder="Your query"></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+       <!-- Resume Column -->
+<div class="resume-column" onclick="window.location.href='file:///C:/Users/Vrajesh/Downloads/Vrajesh%20Shah%20Resume%20(2).pdf'">
+    <p>Click here to view my resume</p>
+</div>
+
+    <div class="underline"></div> <!-- Double red colored underline after the contact section -->
+
+<!-- Sixth Section: Navigation Bar -->
+
+<div id="navigation">
+    <h2>Explore More</h2>
+
+    <div class="nav-links">
+        <a href="https://www.linkedin.com/in/vrajesh-shah-816200228/" target="_blank">LinkedIn</a>
+        <a href="https://shrimadbhagvatam.org/">Shrimad Bhagvatam</a>
+<a href="https://play.google.com/store/apps/details?id=com.pitc.mindfulness" target="_blank">Mindfluness</a>
+<a href="https://play.google.com/store/apps/details?id=com.pitc.medical_flashcards" target="_blank">Medical Flashcards</a>
+<a href="https://twitter.com/vrajesh4268" target="_blank">Twitter</a>
+<a href="https://www.instagram.com/vrajesh.shah09/" target="_blank">Instagram</a>
+<a href="mailto:etc..." target="_blank">Email</a>
+<a href="https://primaryitcare.com/" target="_blank">PITC Website</a>
+        <!-- Add more links as needed -->
+    </div>
+</div>
+<!-- Seventh Section: Go to Top Button -->
+<div id="go-to-top">
+    <a href="#top-navigation">Go to Top</a>
+</div>
+
+<!-- JavaScript for Go to Top Button -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const goToTopButton = document.getElementById('go-to-top');
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                goToTopButton.style.display = "block";
+            } else {
+                goToTopButton.style.display = "none";
+            }
+        };
+    });
+</script>
+
+
+
+</body>
+
+</html>
